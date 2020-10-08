@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using Microsoft.Extensions.Logging;
 
 namespace DistributedLogging
@@ -25,6 +26,10 @@ namespace DistributedLogging
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSwaggerGen(swagger =>
+            {
+                swagger.SwaggerDoc("v1", new OpenApiInfo { Title = "Distributed Logging API" });
+            });
             services.AddControllers();
         }
 
@@ -35,7 +40,11 @@ namespace DistributedLogging
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseSwagger();
+            app.UseSwaggerUI(swaggerUI =>
+            {
+                swaggerUI.SwaggerEndpoint("/swagger/v1/swagger.json", "Distributed Logging API");
+            });
             app.UseHttpsRedirection();
 
             app.UseRouting();
