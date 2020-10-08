@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30427.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributedLogging", "DistributedLogging\DistributedLogging.csproj", "{DAC1C3E8-605F-4E7E-9154-08A0CFE55BA8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAC1C3E8-605F-4E7E-9154-08A0CFE55BA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAC1C3E8-605F-4E7E-9154-08A0CFE55BA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAC1C3E8-605F-4E7E-9154-08A0CFE55BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAC1C3E8-605F-4E7E-9154-08A0CFE55BA8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0BA0BFC6-5338-4C47-85B9-F80C9FA59360}
+	EndGlobalSection
+EndGlobal
