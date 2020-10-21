@@ -20,7 +20,7 @@ namespace DistributedLogging
             var logTest = LogManager.GetRepository(Assembly.GetEntryAssembly());
             XmlConfigurator.Configure(logTest, new FileInfo("log4net.config"));
             var logger = LogManager.GetLogger(typeof(Program));
-            logger.Error("Hello World");
+            logger.Info("Hello World");
             CreateHostBuilder(args).Build().Run();
         }
 
