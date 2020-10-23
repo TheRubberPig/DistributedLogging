@@ -23,6 +23,7 @@ namespace DistributedLogging.Controllers
         public ActionResult<string> PingTest()
         {
             _logger.LogInformation("Ping Method Triggered");
+            _logger.LogError("Test Error Log");
             return Ok("Pong");
         }
     }

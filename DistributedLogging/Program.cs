@@ -17,15 +17,15 @@ namespace DistributedLogging
     {
         public static void Main(string[] args)
         {
-            var logTest = LogManager.GetRepository(Assembly.GetEntryAssembly());
-            XmlConfigurator.Configure(logTest, new FileInfo("log4net.config"));
-            var logger = LogManager.GetLogger(typeof(Program));
-            logger.Info("Hello World");
             CreateHostBuilder(args).Build().Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .ConfigureLogging(logging =>
+                {
+                    logging.ClearProviders();
+                })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

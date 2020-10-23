@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Mvc.Versioning;
+using log4net;
 
 namespace DistributedLogging
 {
@@ -43,6 +44,7 @@ namespace DistributedLogging
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory logFactory)
         {
+            GlobalContext.Properties["Application"] = "Distributed Logs";
             logFactory.AddLog4Net();
             if (env.IsDevelopment())
             {
