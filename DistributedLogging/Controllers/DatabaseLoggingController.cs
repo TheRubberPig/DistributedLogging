@@ -1,31 +1,23 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace DistributedLogging.Controllers
 {
     [ApiVersion("1.0")]
     [Route("[controller]")]
     [ApiController]
-    public class FileLoggingController : ControllerBase
+    public class DatabaseLoggingController : ControllerBase
     {
-        private readonly ILogger<FileLoggingController> _logger;
+        private readonly ILogger<DatabaseLoggingController> _logger;
 
-        public FileLoggingController(ILogger<FileLoggingController> logger)
+        public DatabaseLoggingController(ILogger<DatabaseLoggingController> logger)
         {
             _logger = logger;
-        }
-
-        [HttpGet("Ping")]
-        public ActionResult<string> PingTest()
-        {
-            _logger.LogInformation("Ping Method Triggered");
-            _logger.LogError("Test Error Log");
-            return Ok("Pong");
         }
 
         [HttpPost("Log Info Message")]
